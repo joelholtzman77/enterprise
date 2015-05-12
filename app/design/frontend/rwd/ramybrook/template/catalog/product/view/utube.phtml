@@ -1,0 +1,9 @@
+<?php 
+	$_product = Mage::registry('current_product');
+	//var_dump($_product);
+	if ($_product->getUtubevideo()) {
+		//echo "<iframe width=\"560\" height=\"315\" src=\"$_product->getUtubevideo();\" frameborder=\"0\" allowfullscreen></iframe>";
+		echo $_product->getUtubevideo();
+	}
+	//echo 'test123'; 
+?>

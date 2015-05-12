@@ -1,0 +1,13 @@
+<?php
+	
+	$products = $this->getItems();
+
+	foreach ($products AS $product) {
+		/*echo '<b>Name</b> ' . $product['name'] . ' <b>Url</b> ' . $product['url'] . ' <b>Price</b> ' . $product['price'] . ' 
+		<b>Short Description</b> ' . $product['short_description'] . ' <img src="' . $product['image'] . '"/><br>';*/
+		echo ' <a href="' . $product['url'] . '"><img style="float: left; width: 30%; clear: both; margin: 10px 3% 10px 3%;" src="' . $product['image'] . '"/></a> <div style="float: left; width: 63%; margin: 10px 0 0 0; font-size: 13px; line-height: 19px;" class="product-desc"><a style="text-decoration: none; font-size: 18px; line-height: 22px; color: #000000; padding-bottom: 10px; display: block;" href="' . $product['url'] . '">' . $product['name'] . '</a><b>Price</b>' . number_format($product['price'],2) . '<br/> 
+		<b>Short Description</b> ' . $product['short_description'] . '</div> <br>';
+		
+	}
+	
+?>

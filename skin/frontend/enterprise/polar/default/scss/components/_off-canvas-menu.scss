@@ -1,0 +1,61 @@
+/* OFF CANVAS CATEGORIES/MENU - _off-canvas-categories.scss */
+.off-canvas-menu-wrapper ul {
+  display: block;
+  margin: 0;  
+  li {
+    list-style-type: none;
+    position: relative;
+    @include clearfix();
+    &.active > a {
+      font-weight: bold;     
+    }
+    &.parent > a:after {
+      content: "\e000";
+      font-family: "polar-icons";
+      vertical-align: middle;
+      float: right;
+      display: block;
+      padding-left: 1em;
+    }
+  }
+}
+.off-canvas-menu-wrapper > ul {
+  &:last-of-type {
+    a {
+      border-bottom: 0;
+    }
+  }
+}
+.off-canvas-menu-wrapper ul a {
+  display: block;
+  line-height: $base-font-size * 2;
+  padding: ($column-gutter / 2);
+  border-top: 1px solid darken($border-color, 50%);
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.1);
+  }
+}
+.off-canvas-menu-wrapper ul ul { // Sub menus
+  @include clearfix();
+  border-left: 2px solid darken($border-color, 50%);
+  margin: 0 0 0 $base-font-size;
+  ul {
+    margin: 0 0 0 $base-font-size * 1.5;
+  }
+  a {
+    padding-left: $base-font-size * 1.5;
+    // border-bottom: 0;
+  }
+  ul a {
+    padding-left: $base-font-size * 2;
+  }
+  ul ul a {
+    padding-left: $base-font-size * 2.5;
+  }    
+  ul ul ul a {
+    padding-left: $base-font-size * 3;
+  }        
+}

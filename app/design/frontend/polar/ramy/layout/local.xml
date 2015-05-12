@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+	<!--
+
+  When using polarcore as a starter theme (and not a parent theme) you can edit either polarcore.xml or local.xml. We recommend being consistent to avoid confusion.
+
+  However, if you're using polarcore as a parent theme, we recommend only using local.xml and leaving the polarcore.xml alone. Then an eventual upgrade will be easier.
+
+  -->
+  <default>
+
+  </default>
+</layout>

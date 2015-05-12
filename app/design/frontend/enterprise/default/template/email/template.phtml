@@ -1,0 +1,10 @@
+<?php
+	
+	$productsData = $this->getProductsData();
+	
+	foreach ($productsData AS $product) {
+		echo '<b>Name</b> ' . $product->getName() . ' <b>Url</b> ' . $product->getProductUrl() . ' <b>Price</b> ' . $product->getPrice() . ' <b>Short Description</b> ' . $product->getShortDescription() . 
+	$product->getImageUrl() . '<br>';
+	}
+	
+?>

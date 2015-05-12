@@ -1,0 +1,45 @@
+<?php
+/**
+ * @category    Fishpig
+ * @package     Fishpig_Wordpress
+ * @license     http://fishpig.co.uk/license.txt
+ * @author      Ben Tideswell <help@fishpig.co.uk>
+ */
+?>
+<?php $post = $this->getPost() ?>
+<?php $video = $post->getMetaValue('featured_video');
+	  $image = $post->getMetaValue('featured_image');
+	  
+
+if($video)
+{
+	
+	$value=$video;
+}
+
+if(!$video)
+{
+	
+	$value=$image;
+	$value="<img src=\"$image\">";
+}
+
+?>
+
+
+<?php
+	
+$post_content=$post->getPostExcerpt();
+$word_limit=60;
+$words = explode(" ",$post_content);
+$content = implode(" ",array_splice($words,0,$word_limit));
+
+
+
+?>
+
+<div class="small-12 medium-6 large-4 columns">
+<a href="<?php echo $post->getPermalink() ?>"><?php echo $value;?>
+<h2><?php echo $this->escapeHtml($post->getPostTitle()) ?></h2>
+<p>	<?php echo $content; ?>...</p></a>
+</div>

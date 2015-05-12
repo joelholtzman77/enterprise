@@ -1,0 +1,36 @@
+/* BREADCRUMBS - _breadcrumbs.scss */
+nav.breadcrumbs {
+  clear: both; /* FireFox fix */
+  line-height: $base-font-size * 1.5;
+  & > a {
+    display:none;
+    float: none;
+    &:before {
+      font-size: $base-font-size * 1.25;
+      color: $light-gray;
+    }
+  }
+  & > a:nth-last-child(2),
+  & > a:last-child {
+    display: inline;
+  }
+  & > a:nth-last-child(2):before {
+    display: none;
+  }
+  @media #{$medium-up} {
+    & > a {
+      display:inline-block;
+      float: left;
+    }
+    & > a:nth-last-child(2),
+    & > a:last-child {
+      display: inline-block;
+    }
+    & > a:nth-last-child(2):before {
+      display: inline;
+    }
+  }
+}
+.fullwidth > nav.breadcrumbs {
+  @include grid-row();
+}
